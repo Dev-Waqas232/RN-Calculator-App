@@ -1,7 +1,9 @@
 /* eslint-disable prettier/prettier */
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, StatusBar} from 'react-native';
+import {View, StyleSheet, StatusBar} from 'react-native';
 import {DARK_COLORS, LIGHT_COLORS} from './src/theme';
+import NumPad from './src/components/NumPad';
+import OutputScreen from './src/components/OutputScreen';
 
 const App = () => {
   const [isDark, setIsDark] = useState<boolean>(true);
@@ -18,7 +20,8 @@ const App = () => {
           backgroundColor: colors.backgroundColor,
           ...styles.mainContainer,
         }}>
-        <Text>Hello World</Text>
+        <OutputScreen colors={colors} />
+        <NumPad colors={colors} />
       </View>
     </>
   );
@@ -29,5 +32,6 @@ export default App;
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
+    gap: 48,
   },
 });
