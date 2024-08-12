@@ -4,8 +4,8 @@ import {View, Text, StyleSheet, StatusBar} from 'react-native';
 import {DARK_COLORS, LIGHT_COLORS} from './src/theme';
 
 const App = () => {
-  const [isDark, setIsDark] = useState(true);
-  const [colors, setColors] = useState(isDark ? DARK_COLORS : LIGHT_COLORS);
+  const [isDark, setIsDark] = useState<boolean>(true);
+  const colors = isDark ? DARK_COLORS : LIGHT_COLORS;
 
   return (
     <>
